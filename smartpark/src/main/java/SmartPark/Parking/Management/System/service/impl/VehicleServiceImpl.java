@@ -27,6 +27,10 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public void createVehicle(VehicleDto vehicleDto) {
+        String vehicleType = vehicleDto.getType();
+        if(!vehicleType.equals("Car") && !vehicleType.equals("Motorcycle") && !vehicleType.equals("Truck")){
+            throw new RuntimeException("Vehicle Type should be [Car,Motorcycle,Truck] only");
+        }
         Vehicle vehicle = VehicleMapper.mapToVehicle(vehicleDto, new Vehicle());
         Optional<Vehicle> optionalVehicle = vehicleRepository.findByLicensePlate(vehicle.getLicensePlate());
         if(optionalVehicle.isPresent()){

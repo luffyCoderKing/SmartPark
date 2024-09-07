@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "afcb6675-bf79-4102-8efc-2ea6799d79b4",
+		"name": "SmartPark",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29108090"
+	},
+	"item": [
+		{
+			"name": "CreateParkingLot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": \"Manila\",\r\n    \"capacity\": 8,\r\n    \"occupiedSpaces\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/create-parking-lot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"create-parking-lot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateVehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"licensePlate\": \"2-A\",\r\n    \"type\": \"Car\",\r\n    \"ownerName\": \"Jose\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/create-vehicle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"create-vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterVehicleToParkLot",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lotId\": 1,\r\n    \"licensePlate\": \"1-A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/check-in-vehicle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"check-in-vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UnregisterVehicleToParkLot",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lotId\": 1,\r\n    \"licensePlate\": \"1-A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/check-out-vehicle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"check-out-vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchParkingLotDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/parking-lot?lotId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parking-lot"
+					],
+					"query": [
+						{
+							"key": "lotId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchAllParkedVehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/all-parked-vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"all-parked-vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchParkedVehiclesInCertainParkingLot",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/parked-vehicles?lotId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"parked-vehicles"
+					],
+					"query": [
+						{
+							"key": "lotId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
